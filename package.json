@@ -1,0 +1,32 @@
+{
+  "name": "adriansbus",
+  "version": "0.0.1",
+  "description": "Gives me my bus time leaving Williamsburg, Brooklyn",
+  "main": "bus.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agreen757/adriansbus"
+  },
+  "keywords": [
+    "MTA",
+    "API",
+    "node-cron",
+    "twilio"
+  ],
+  "author": "Adrian Green",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agreen757/adriansbus/issues"
+  },
+  "homepage": "https://github.com/agreen757/adriansbus",
+  "dependencies": {
+    "async": "^0.9.0",
+    "cron": "^1.0.5",
+    "request": "^2.45.0",
+    "time": "^0.11.0",
+    "twilio": "^1.7.0"
+  }
+}
