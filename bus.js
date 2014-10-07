@@ -19,7 +19,7 @@ var async = require('async');
 var stopCode = "305181";
 var cron = require('cron').CronJob;
 console.log('started bus runner')
-var job = new cron('00 30 14 * * 1-5', function(){
+var job = new cron('00 00 13 * * 1-5', function(){
     request.get('http://bustime.mta.info/api/siri/stop-monitoring.json?MonitoringRef='+stopCode+'&key=fa97a9a3-c76f-4711-92d1-927160e6cd89', function(err,res){
         if(err){console.log(err)}
         var silo = [];
