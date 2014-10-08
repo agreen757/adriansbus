@@ -19,6 +19,8 @@ var request = require('request'),
 })*/
 
 //exports.schedule = function(cb){
+
+MongoClient.connect(MONGOHQ_URL, function(err, db){
     
     //*****************************WEATHER FOR THE DAY
     var weatherJob = new cron('00 00 11 * * 1-7', function(){
