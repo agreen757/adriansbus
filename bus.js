@@ -20,6 +20,11 @@ var request = require('request'),
 
 //exports.schedule = function(cb){
 
+    var stopCode = "305181";
+    var stopCodeHome = "305183";
+    var cron = require('cron').CronJob;
+    console.log('started bus runner')
+
 MongoClient.connect(MONGOHQ_URL, function(err, db){
     
     //*****************************WEATHER FOR THE DAY
@@ -71,10 +76,6 @@ MongoClient.connect(MONGOHQ_URL, function(err, db){
 
     //****************************THE BUS GOING TO WORK
 
-    var stopCode = "305181";
-    var stopCodeHome = "305183";
-    var cron = require('cron').CronJob;
-    console.log('started bus runner')
     var job = new cron('00 00 13 * * 1-5', function(){
         request.get('http://bustime.mta.info/api/siri/stop-monitoring.json?MonitoringRef='+stopCode+'&key=fa97a9a3-c76f-4711-92d1-927160e6cd89', function(err,res){
             if(err){console.log(err)}
