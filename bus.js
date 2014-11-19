@@ -24,6 +24,17 @@ var request = require('request'),
     var stopCodeHome = "305183";
     var cron = require('cron').CronJob;
     console.log('started bus runner')
+    
+    /*var client = new voicejs.Client({email:"dominion.green@gmail.com",password:"liillive83*"})
+    
+    client.sms({to:'5981397',text:'hello world'}, function(err,res,data){
+        if(err){console.log(err)}
+        
+        console.log(data);
+    })*/
+    /*client.get('inbox', function(err,resp,data){
+        console.log(data.conversations_response.conversationgroup)
+    })*/
 
 MongoClient.connect(MONGOHQ_URL, function(err, db){
     
@@ -76,7 +87,7 @@ MongoClient.connect(MONGOHQ_URL, function(err, db){
 
     //****************************THE BUS GOING TO WORK
 
-    var job = new cron('00 00 13 * * 1-5', function(){
+    var job = new cron('00 00 14 * * 1-5', function(){
         request.get('http://bustime.mta.info/api/siri/stop-monitoring.json?MonitoringRef='+stopCode+'&key=fa97a9a3-c76f-4711-92d1-927160e6cd89', function(err,res){
             if(err){console.log(err)}
             var silo = [];
@@ -119,7 +130,7 @@ MongoClient.connect(MONGOHQ_URL, function(err, db){
     *****************************************************************************
     ******************************************THE BUS GOING HOME *****************************************************************************
     */
-    var job = new cron('00 30 22 * * 1-5', function(){
+    var job = new cron('00 30 23 * * 1-5', function(){
             request.get('http://bustime.mta.info/api/siri/stop-monitoring.json?MonitoringRef='+stopCodeHome+'&key=fa97a9a3-c76f-4711-92d1-927160e6cd89', function(err,res){
                 if(err){console.log(err)}
                 var silo = [];
