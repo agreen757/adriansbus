@@ -47,7 +47,7 @@ MongoClient.connect(MONGOHQ_URL, function(err, db){
             doc.map(function(element){
                 if(element.name != null){
                     console.log(element);
-                    var apikey = 'e5dd01df71d7fc88812e565893fa2e77'
+                    var apikey = 'key'
                     var request = require('request')
                     //FOR SOME REASON THIS WORKS WITHOUT THE API KEY - CHANGE FROM DOCS I GUESS
                     //IN THIS REQUEST WE NEED TO TAKE IN THE ADDRESS FROM THE EXTERNAL USER INFORMATION - THAT SHOULD BE ALL WE NEED
@@ -64,8 +64,8 @@ MongoClient.connect(MONGOHQ_URL, function(err, db){
 
                             var twilio = require('twilio');
 
-                            var accountSid = 'ACaacd830b4b6d71fd997b070bddb2d8ea';
-                            var authToken = 'c54316f72630f12f38d424e3166bfb54'
+                            var accountSid = 'sid';
+                            var authToken = 'token'
 
                             var client = require('twilio')(accountSid,authToken);
 
@@ -109,8 +109,8 @@ MongoClient.connect(MONGOHQ_URL, function(err, db){
                     })     
                 },
                 function(callback){
-                    var accountSid = 'ACaacd830b4b6d71fd997b070bddb2d8ea';
-                    var authToken = 'c54316f72630f12f38d424e3166bfb54'
+                    var accountSid = 'sid';
+                    var authToken = 'token'
                     var client = require('twilio')(accountSid,authToken);
 
                             client.messages.create({
@@ -152,8 +152,8 @@ MongoClient.connect(MONGOHQ_URL, function(err, db){
                         })     
                     },
                     function(callback){
-                        var accountSid = 'ACaacd830b4b6d71fd997b070bddb2d8ea';
-                        var authToken = 'c54316f72630f12f38d424e3166bfb54'
+                        var accountSid = 'sid';
+                        var authToken = 'token'
                         var client = require('twilio')(accountSid,authToken);
 
                                 client.messages.create({
